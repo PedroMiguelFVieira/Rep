@@ -41,34 +41,47 @@ public class ItineraryManager implements IItineraryManager {
 			//Request 1
 			ServiceConfigMappingBean mappingBean = new ServiceConfigMappingBean();
 			mappingBean.setKey(key);
-			mappingBean.setFrom(originAddress);
-			mappingBean.setTo(destinationAddress);
+			mappingBean.setFrom(StringUtils.trim(originAddress));
+			mappingBean.setTo(StringUtils.trim(destinationAddress));
+			mappingBean.setOutFormat("xml");
+			mappingBean.setInFormat("xml");
 
 			MapQuestRouteBean routeInfoBean = this.mapQuestRequestManager.doRouteRequest(mappingBean);		
 
-			response.setDistance(Integer.parseInt(routeInfoBean.getRoute().getDistance()));
+			response.setDistance(routeInfoBean.getRoute().getDistance());
 			response.setDuration(routeInfoBean.getRoute().getTime());
-			response.setAverateConsumption(Integer.parseInt(routeInfoBean.getRoute().getFuelUsed()));
+			response.setAverateConsumption(routeInfoBean.getRoute().getFuelUsed());
 			
 			
 			//Request 2
 			mappingBean = new ServiceConfigMappingBean();
 			mappingBean.setKey(key);
-			mappingBean.setLocation(originAddress);			
+			mappingBean.setLocation(StringUtils.trim(originAddress));
+			mappingBean.setOutFormat("xml");
+			mappingBean.setInFormat("xml");
 			
 			MapQuestGeoCodeBean addressInfoBeanOrigin = this.mapQuestRequestManager.doLocationRequest(mappingBean);
 			
-			response.setInitialCoordinates(addressInfoBeanOrigin.getResult().getLocation().getLatLng().getLat() + "," + addressInfoBeanOrigin.getResult().getLocation().getLatLng().getLng());
+			
+			
+			/*response.setInitialCoordinates(addressInfoBeanOrigin.getResult().getLocations().getDisplayLatLng().getLatLng().getLat() 
+					+ "," + addressInfoBeanOrigin.getResult().getLocations().getDisplayLatLng().getLatLng().getLng());*/
 			
 			
 			
 			//Request 3
 			mappingBean = new ServiceConfigMappingBean();
 			mappingBean.setKey(key);
-			mappingBean.setLocation(destinationAddress);			
+			mappingBean.setLocation(StringUtils.trim(destinationAddress));			
+			mappingBean.setOutFormat("xml");
+			mappingBean.setInFormat("xml");
 			
 			MapQuestGeoCodeBean addressInfoBeanDestination = this.mapQuestRequestManager.doLocationRequest(mappingBean);
-			response.setFinalCoordinates(addressInfoBeanDestination.getResult().getLocation().getLatLng().getLat() + "," + addressInfoBeanDestination.getResult().getLocation().getLatLng().getLng());
+					
+			
+			
+			/*response.setFinalCoordinates(addressInfoBeanDestination.getResult().getLocations().getDisplayLatLng().getLatLng().getLat() + "," 
+			+ addressInfoBeanDestination.getResult().getLocations().getDisplayLatLng().getLatLng().getLng());*/
 			
 		
 		} catch (AddressNotFoundException | RouteNotFoundException | MandatoryFieldsNotFoundException e) {

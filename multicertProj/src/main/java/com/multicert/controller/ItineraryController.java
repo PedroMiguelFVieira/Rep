@@ -33,11 +33,12 @@ public class ItineraryController {
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String loginPage(Locale locale, Model model) throws ClassNotFoundException, SQLException {
 		logger.info("/index visited.");
-		CarDao dao = new CarDao();	
 		
+		
+		/*CarDao dao = new CarDao();		
 		
 		ModelAndView mav = new ModelAndView("infoForm");
-		List<Car> cars = dao.getAll(); 
+		List<Car> cars = dao.getAll(); */
 		/*Map< String, String > carsMap = new HashMap<String, String>();
 		carsMap.put("opel", "OPEL");
 		carsMap.put("nissan", "NISSAN");

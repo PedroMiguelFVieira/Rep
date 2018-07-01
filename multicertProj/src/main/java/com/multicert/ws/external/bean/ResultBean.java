@@ -1,24 +1,42 @@
 package com.multicert.ws.external.bean;
 
+import java.util.List;
+
 public class ResultBean {
 	
 	
-	private String providedLocation;
-	private LocationBean location;
+	private ProvidedLocationBean providedLocation;
+	private List<LocationBean> locations;
 	
 	
-	public String getProvidedLocation() {
+	
+	public static class ProvidedLocationBean {
+		
+		private String location;
+
+		public String getLocation() {
+			return location;
+		}
+		public void setLocation(String location) {
+			this.location = location;
+		}
+		
+		
+	}
+	
+	public ProvidedLocationBean getProvidedLocation() {
 		return providedLocation;
 	}
-	public void setProvidedLocation(String providedLocation) {
+	public void setProvidedLocation(ProvidedLocationBean providedLocation) {
 		this.providedLocation = providedLocation;
 	}
-	public LocationBean getLocation() {
-		return location;
+	public List<LocationBean> getLocations() {
+		return locations;
 	}
-	public void setLocation(LocationBean location) {
-		this.location = location;
-	}	
+	public void setLocations(List<LocationBean> locations) {
+		this.locations = locations;
+	}
+
 		
 
 

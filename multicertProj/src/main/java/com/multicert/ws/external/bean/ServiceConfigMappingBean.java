@@ -7,7 +7,8 @@ public class ServiceConfigMappingBean {
 	private String from;
 	private String to;
 	private String location;
-	
+	private String outFormat;
+	private String inFormat;
 	
 
 	public String getKey() {
@@ -34,6 +35,18 @@ public class ServiceConfigMappingBean {
 	}
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	public String getOutFormat() {
+		return outFormat;
+	}
+	public void setOutFormat(String outFormat) {
+		this.outFormat = outFormat;
+	}
+	public String getInFormat() {
+		return inFormat;
+	}
+	public void setInFormat(String inFormat) {
+		this.inFormat = inFormat;
 	}
 	
 	

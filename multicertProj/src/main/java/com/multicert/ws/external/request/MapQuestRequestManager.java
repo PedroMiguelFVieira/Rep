@@ -70,7 +70,7 @@ public class MapQuestRequestManager implements IMapQuestRequestManager {
 			ExternalServiceMapper<MapQuestGeoCodeBean> addressMapper = new ExternalServiceMapper<MapQuestGeoCodeBean>(MapQuestGeoCodeBean.class);
 			MapQuestGeoCodeBean addressInfoBean = addressMapper.stringToObject(addressInfoValue);
 
-			if(addressInfoBean.getResult() == null)
+			if(addressInfoBean.getResults() == null)
 				throw new AddressNotFoundException("Address not found");
 
 			return addressInfoBean;

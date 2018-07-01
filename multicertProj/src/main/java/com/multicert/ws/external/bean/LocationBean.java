@@ -6,6 +6,7 @@ public class LocationBean {
 	private String street;
 	private String adminArea6; 
 	private String adminArea5;
+	private String adminArea3;
 	private String adminArea4;
 	private String postalCode;
 	private String adminArea1;
@@ -13,12 +14,28 @@ public class LocationBean {
 	private String geocodeQualityCode;
 	private String dragPoint;
 	private String sideOfStreet;
-	private LatLngBean displayLatLng;
+	private DisplayLatLngBean displayLatLng;
 	private String linkId;
 	private String unknownInput;
 	private String type;
 	private LatLngBean latLng;
+	private String mapUrl;
 	
+	
+	
+	
+	public static class DisplayLatLngBean{
+		private LatLngBean latLng;
+
+		public LatLngBean getLatLng() {
+			return latLng;
+		}
+
+		public void setLatLng(LatLngBean latLng) {
+			this.latLng = latLng;
+		}		
+		
+	}
 	
 	public String getStreet() {
 		return street;
@@ -80,12 +97,7 @@ public class LocationBean {
 	public void setSideOfStreet(String sideOfStreet) {
 		this.sideOfStreet = sideOfStreet;
 	}
-	public LatLngBean getDisplayLatLng() {
-		return displayLatLng;
-	}
-	public void setDisplayLatLng(LatLngBean displayLatLng) {
-		this.displayLatLng = displayLatLng;
-	}
+
 	public String getLinkId() {
 		return linkId;
 	}
@@ -109,6 +121,24 @@ public class LocationBean {
 	}
 	public void setLatLng(LatLngBean latLng) {
 		this.latLng = latLng;
+	}
+	public DisplayLatLngBean getDisplayLatLng() {
+		return displayLatLng;
+	}
+	public void setDisplayLatLng(DisplayLatLngBean displayLatLng) {
+		this.displayLatLng = displayLatLng;
+	}
+	public String getAdminArea3() {
+		return adminArea3;
+	}
+	public void setAdminArea3(String adminArea3) {
+		this.adminArea3 = adminArea3;
+	}
+	public String getMapUrl() {
+		return mapUrl;
+	}
+	public void setMapUrl(String mapUrl) {
+		this.mapUrl = mapUrl;
 	}
 	
 }

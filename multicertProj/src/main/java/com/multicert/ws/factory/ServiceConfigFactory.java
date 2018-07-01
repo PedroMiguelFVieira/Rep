@@ -36,6 +36,8 @@ public class ServiceConfigFactory {
 			params.put("key", mappingBean.getKey());
 			params.put("from", mappingBean.getFrom());	
 			params.put("to", mappingBean.getTo());
+			params.put("outFormat", mappingBean.getOutFormat());
+			
 
 			serviceConfig.setHost(configType.getMethod());
 			serviceConfig.setUrlPart(MAP_QUEST_URL_DIRECTIONS);
@@ -48,7 +50,9 @@ public class ServiceConfigFactory {
 
 			Map<String, String> params = new HashMap<String,String>();
 			params.put("key", mappingBean.getKey());
+			params.put("outFormat", mappingBean.getOutFormat());
 			params.put("location", mappingBean.getLocation());
+			
 			
 			serviceConfig.setHost(configType.getMethod());
 			serviceConfig.setUrlPart(MAP_QUEST_URL_GEO);

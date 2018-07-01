@@ -12,14 +12,14 @@ public class RouteBean {
 	private String realTime;
 	private String fuelUsed;
 	private String formattedTime;
-	private List<String> legs;
+	private List<LegBean> legs;
 	private String hasTollRoad;
 	private String hasFerry;
 	private String hasHighway;
 	private String hasSeasonalClosure;
 	private String hasUnpaved;
 	private String hasCountryCross;
-	private List<String> locations;
+	private List<LocationRouteBean> locations;
 	private String locationSequence;
 	private String computedWaypoints;
 	
@@ -203,6 +203,7 @@ public class RouteBean {
 		public static class Coord{
 			private String lat;
 			private String lng;
+			
 			public String getLat() {
 				return lat;
 			}
@@ -265,12 +266,7 @@ public class RouteBean {
 	public void setFormattedTime(String formattedTime) {
 		this.formattedTime = formattedTime;
 	}
-	public List<String> getLegs() {
-		return legs;
-	}
-	public void setLegs(List<String> legs) {
-		this.legs = legs;
-	}
+
 	public String getHasTollRoad() {
 		return hasTollRoad;
 	}
@@ -307,12 +303,7 @@ public class RouteBean {
 	public void setHasCountryCross(String hasCountryCross) {
 		this.hasCountryCross = hasCountryCross;
 	}
-	public List<String> getLocations() {
-		return locations;
-	}
-	public void setLocations(List<String> locations) {
-		this.locations = locations;
-	}
+
 	public String getLocationSequence() {
 		return locationSequence;
 	}
@@ -330,6 +321,18 @@ public class RouteBean {
 	}
 	public void setOptions(List<Options> options) {
 		this.options = options;
+	}
+	public List<LegBean> getLegs() {
+		return legs;
+	}
+	public void setLegs(List<LegBean> legs) {
+		this.legs = legs;
+	}
+	public List<LocationRouteBean> getLocations() {
+		return locations;
+	}
+	public void setLocations(List<LocationRouteBean> locations) {
+		this.locations = locations;
 	}
 	
 

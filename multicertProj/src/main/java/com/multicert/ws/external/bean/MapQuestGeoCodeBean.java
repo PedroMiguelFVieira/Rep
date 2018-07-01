@@ -1,5 +1,7 @@
 package com.multicert.ws.external.bean;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -14,14 +16,13 @@ public class MapQuestGeoCodeBean extends AbstractMapQuestRouteBean {
 	@XmlElement(name = "info")
 	private InfoBean info;
 	
+	@XmlElement(name = "results")
+	private List<ResultBean> results;
+
 	
 	@XmlElement(name = "options")
-	private OptionsBean option;
+	private OptionsBean options;
 	
-
-	@XmlElement(name = "results")
-	private ResultBean result;
-
 	
 	public InfoBean getInfo() {
 		return info;
@@ -33,24 +34,28 @@ public class MapQuestGeoCodeBean extends AbstractMapQuestRouteBean {
 	}
 
 
-	public OptionsBean getOption() {
-		return option;
+
+	public List<ResultBean> getResults() {
+		return results;
 	}
 
 
-	public void setOption(OptionsBean option) {
-		this.option = option;
+	public void setResults(List<ResultBean> results) {
+		this.results = results;
 	}
 
 
-	public ResultBean getResult() {
-		return result;
+	public OptionsBean getOptions() {
+		return options;
 	}
 
 
-	public void setResult(ResultBean result) {
-		this.result = result;
+	public void setOptions(OptionsBean options) {
+		this.options = options;
 	}
+
+
+
 
 	
 }

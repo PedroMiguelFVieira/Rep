@@ -13,9 +13,9 @@ public class ItineraryResponse implements Serializable {
 	
 	private String initialCoordinates;
 	private String finalCoordinates;
-	private int distance;
+	private String distance;
 	private String duration;
-	private int averateConsumption;
+	private String averateConsumption;
 	
 	
 	
@@ -32,24 +32,26 @@ public class ItineraryResponse implements Serializable {
 	public void setFinalCoordinates(String finalCoordinates) {
 		this.finalCoordinates = finalCoordinates;
 	}
-	public int getDistance() {
-		return distance;
-	}
-	public void setDistance(int distance) {
-		this.distance = distance;
-	}
+
 	public String getDuration() {
 		return duration;
 	}
 	public void setDuration(String duration) {
 		this.duration = duration;
 	}
-	public int getAverateConsumption() {
+	public String getDistance() {
+		return distance;
+	}
+	public void setDistance(String distance) {
+		this.distance = distance;
+	}
+	public String getAverateConsumption() {
 		return averateConsumption;
 	}
-	public void setAverateConsumption(int averateConsumption) {
+	public void setAverateConsumption(String averateConsumption) {
 		this.averateConsumption = averateConsumption;
 	}
+
 
 
 
