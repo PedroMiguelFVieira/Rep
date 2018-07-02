@@ -9,12 +9,12 @@
 	<span>${itineraryInfo.finalCoordinates}</span><br/>
 
 	<label>Distancia:</label>
-	<span>${itineraryInfo.distance}</span><br/>
+	<span>${itineraryInfo.distance} km</span><br/>
 
 	<label>Duracao:</label>
 	<span>${itineraryInfo.duration}</span><br/>
 	
 	<label>Consumo Combinado:</label>
-	<span>${itineraryInfo.averageConsumption}</span><br/>
+	<span>${itineraryInfo.averateConsumption}</span><br/>
 	
 </div>

@@ -1,7 +1,5 @@
 package com.multicert.ws.external.bean;
 
-import java.util.List;
-
 public  class InfoBean {		
 	
 	private String statusCode;

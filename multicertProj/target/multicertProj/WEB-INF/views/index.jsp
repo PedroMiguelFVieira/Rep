@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Country info</title>
+		<title>Homepage</title>
 
 		<script type="text/javascript" src="resources/js/genericCode.js"></script>
 		<script type="text/javascript" src="resources/jquery/jquery-2.1.3.min.js"></script>
@@ -16,9 +16,19 @@
 	</head>
 	<body>
 		<div class="form">
-			<form id="infoForm">
-				<input type="text" name="originPoint" class="input">
-				<input type="text" name="destinationPoint" class="input">
+		
+		<p><font size="6"> Exercicio Multicert </font></p>
+		
+			<form id="infoForm">		
+			
+				<label for="orig">Origem</label>
+				<input type="text" name="originAddress" class="input" id="orig">
+				</br>
+				<div> </div>
+				</br>
+				<label for="dest">Destino</label>
+				<input type="text" name="destinationAddress" class="input" id="dest">
+				
 				<!--input type="text" name="vehicle" class="input"-->
 			
 				

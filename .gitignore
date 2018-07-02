@@ -3,3 +3,5 @@ multicertProj/target/test-classes/com/multicert/TestServiceResponse.class
 multicertProj/target/m2e-wtp/web-resources/META-INF/maven/com.vieira.pedro/multicertProj/pom.properties
 multicertProj/target/test-classes/com/multicert/TestServiceResponse.class
 multicertProj/target/m2e-wtp/web-resources/META-INF/maven/com.vieira.pedro/multicertProj/pom.properties
+*.class
+*.class

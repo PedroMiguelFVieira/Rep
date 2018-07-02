@@ -1,10 +1,7 @@
 package com.multicert.controller;
 
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,12 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.multicert.bean.Car;
 import com.multicert.bean.ItineraryRequestDetail;
 import com.multicert.bean.ItineraryResponse;
-import com.multicert.dao.CarDao;
 import com.multicert.manager.IItineraryManager;
 
 @Controller
@@ -29,12 +23,22 @@ public class ItineraryController {
 
 	@Autowired
 	private IItineraryManager service;
+	
+	/*@Autowired
+	private CarJdbcRepository repository;*/
+	
+	/*@Autowired
+	private CarDao dao;*/
+	
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String loginPage(Locale locale, Model model) throws ClassNotFoundException, SQLException {
 		logger.info("/index visited.");
 		
 		
+		
+		/*List <Car> carList = repository.findAll();		
+		System.out.println(carList);*/
 		/*CarDao dao = new CarDao();		
 		
 		ModelAndView mav = new ModelAndView("infoForm");
