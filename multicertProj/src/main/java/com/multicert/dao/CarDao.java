@@ -13,6 +13,14 @@ import java.util.List;
 import com.multicert.bean.Car;
 
 public class CarDao {
+	
+  // JDBC driver name and database URL 
+   static final String JDBC_DRIVER = "org.h2.Driver";   
+   static final String DB_URL = "jdbc:h2:~/test";  
+   
+   //  Database credentials 
+   static final String USER = "sa"; 
+   static final String PASS = ""; 
 
 	public CarDao() {
 		
@@ -20,8 +28,8 @@ public class CarDao {
 	
 	public void printValues() throws SQLException, ClassNotFoundException {
 		
-		Class.forName("org.h2.Driver");
-		Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+		Class.forName(JDBC_DRIVER);
+		Connection con = DriverManager.getConnection(DB_URL,USER,PASS);  
 		
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("Select * from CAR");
@@ -31,13 +39,18 @@ public class CarDao {
 			
 		}
 		
+		  stmt.close(); 
+		  con.close();
+		
 	}
+	
+	
 	
 	
 	public void insertCar(Car car) throws ClassNotFoundException, SQLException {
 		
-		Class.forName("org.h2.Driver");
-		Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+		Class.forName(JDBC_DRIVER);
+		Connection con = DriverManager.getConnection(DB_URL,USER,PASS);  
 		
 		
 		
@@ -53,28 +66,33 @@ public class CarDao {
 			pstmt.setString(3,brand);
 			pstmt.setString(4,averageConsumption);
 			pstmt.executeUpdate();		
+			
+			pstmt.close(); 
+			  con.close();
 	}
 	
 	
 	public void deleteCar(String licensePlate) throws ClassNotFoundException, SQLException {
 		
 		
-		Class.forName("org.h2.Driver");
-		Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+		Class.forName(JDBC_DRIVER);
+		Connection con = DriverManager.getConnection(DB_URL,USER,PASS);  
 		
 		
 		PreparedStatement pstmt = con.prepareStatement("DELETE FROM CAR WHERE LICENSE_PLATE = ?");
 		pstmt.setString(1,licensePlate);
 		pstmt.executeUpdate();
 	
+		pstmt.close(); 
+		con.close();
 		
 	}
 	
 	public Car getCarByPlate(String licensePlate) throws ClassNotFoundException, SQLException {
 		
 		
-		Class.forName("org.h2.Driver");
-		Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+		Class.forName(JDBC_DRIVER);
+		Connection con = DriverManager.getConnection(DB_URL,USER,PASS);  
 		
 		
 		PreparedStatement pstmt = con.prepareStatement("Select * from CAR WHERE LICENSE_PLATE = ?");
@@ -88,20 +106,26 @@ public class CarDao {
 			car.setLicencePlate(rs.getString("LICENSE_PLATE"));
 			car.setBrand(rs.getString("BRAND"));
 			car.setAverageConsumption(rs.getString("AVERAGE_CONSUMPTION"));
+			
+			pstmt.close(); 
+			con.close();
+			
 			return car;
 		}
 		
+		 pstmt.close(); 
+		 con.close();
 		 return null;
 		
-		
+		 
 	}
 	
 	
 	
 	public List<Car> getAll() throws SQLException, ClassNotFoundException {
 		
-		Class.forName("org.h2.Driver");
-		Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+		Class.forName(JDBC_DRIVER);
+		Connection con = DriverManager.getConnection(DB_URL,USER,PASS);  
 		
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("Select * from CAR");
@@ -110,6 +134,7 @@ public class CarDao {
 		while (rs.next()) {
 			
 			Car car = new Car();
+			car.setId(rs.getLong("ID"));
 			car.setModel(rs.getString("MODEL"));
 			car.setLicencePlate(rs.getString("LICENSE_PLATE"));
 			car.setBrand(rs.getString("BRAND"));
@@ -119,7 +144,8 @@ public class CarDao {
 			
 		}
 		
-		
+		stmt.close(); 
+		con.close();
 		return cars;
 		
 	}

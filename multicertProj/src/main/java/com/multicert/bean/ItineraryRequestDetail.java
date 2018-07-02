@@ -4,7 +4,7 @@ public class ItineraryRequestDetail {
 
 	private String originAddress;
 	private String destinationAddress;
-	private Car car;
+	private String car;
 	
 	
 	public String getOriginAddress() {
@@ -19,12 +19,13 @@ public class ItineraryRequestDetail {
 	public void setDestinationAddress(String destinationAddress) {
 		this.destinationAddress = destinationAddress;
 	}
-	public Car getCar() {
+	public String getCar() {
 		return car;
 	}
-	public void setCar(Car car) {
+	public void setCar(String car) {
 		this.car = car;
 	}
+
 
 
 }
