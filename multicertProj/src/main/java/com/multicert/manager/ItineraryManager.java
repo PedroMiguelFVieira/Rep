@@ -35,9 +35,13 @@ public class ItineraryManager implements IItineraryManager {
 		
 		try{
 
-			if(StringUtils.isBlank(originAddress) || StringUtils.isBlank(destinationAddress))
+			if(StringUtils.isEmpty(originAddress) || StringUtils.isEmpty(destinationAddress))
 				throw new MandatoryFieldsNotFoundException("Empty mandatory fields");
 
+			
+			originAddress = originAddress.replaceAll("\\s+","");
+			destinationAddress = destinationAddress.replaceAll("\\s+","");
+			
 			//Request 1
 			ServiceConfigMappingBean mappingBean = new ServiceConfigMappingBean();
 			mappingBean.setKey(key);
@@ -45,15 +49,16 @@ public class ItineraryManager implements IItineraryManager {
 			mappingBean.setTo(StringUtils.trim(destinationAddress));
 			mappingBean.setOutFormat("xml");
 			mappingBean.setInFormat("xml");
+			mappingBean.setUnit("k");
 
 			MapQuestRouteBean routeInfoBean = this.mapQuestRequestManager.doRouteRequest(mappingBean);		
 
 			response.setDistance(routeInfoBean.getRoute().getDistance());
-			response.setDuration(routeInfoBean.getRoute().getTime());
+			response.setDuration(routeInfoBean.getRoute().getFormattedTime());					
 			response.setAverateConsumption(routeInfoBean.getRoute().getFuelUsed());
 			
 			
-			//Request 2
+			//Request 2 Coordenadas da origem
 			mappingBean = new ServiceConfigMappingBean();
 			mappingBean.setKey(key);
 			mappingBean.setLocation(StringUtils.trim(originAddress));
@@ -69,7 +74,7 @@ public class ItineraryManager implements IItineraryManager {
 			
 			
 			
-			//Request 3
+			//Request 3 Coordenadas do destino
 			mappingBean = new ServiceConfigMappingBean();
 			mappingBean.setKey(key);
 			mappingBean.setLocation(StringUtils.trim(destinationAddress));			
@@ -96,6 +101,9 @@ public class ItineraryManager implements IItineraryManager {
 		return response;	
 		
 	}
+	
+	
+
 
 
 	

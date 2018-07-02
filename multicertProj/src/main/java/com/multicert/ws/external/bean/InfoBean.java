@@ -6,7 +6,7 @@ public  class InfoBean {
 	
 	private String statusCode;
 	private String messages;
-	private List<Copyright> copyright;	
+	private Copyright copyright;	
 	
 	
 	public static class Copyright{
@@ -50,11 +50,12 @@ public  class InfoBean {
 	public void setMessages(String messages) {
 		this.messages = messages;
 	}
-	public List<Copyright> getCopyright() {
+	public Copyright getCopyright() {
 		return copyright;
 	}
-	public void setCopyright(List<Copyright> copyright) {
+	public void setCopyright(Copyright copyright) {
 		this.copyright = copyright;
 	}
+
 	
 }

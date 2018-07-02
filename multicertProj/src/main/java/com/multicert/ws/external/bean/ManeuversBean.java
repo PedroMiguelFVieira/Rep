@@ -1,5 +1,14 @@
 package com.multicert.ws.external.bean;
 
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ManeuversBean {
 
 
@@ -14,15 +23,63 @@ public class ManeuversBean {
 	private String narrative;
 	private String directionName;
 	private String index;
-	private Street streets;
-	private String signs;
+	
+	@XmlElementWrapper(name="streets")
+	@XmlElement(name = "street")
+	private List<Street> streets;
+	
+	@XmlElementWrapper(name="signs")
+	@XmlElement(name = "sign")
+	private List<Sign> signs;
+	
+	
 	private String iconUrl;
 	private String linkIds;
 	private String mapUrl;
 
 
 
-
+	public static class Sign{
+		
+		private String type;
+		private String direction;
+		private String text;
+		private String extraText;
+		private String url;
+		
+		
+		public String getType() {
+			return type;
+		}
+		public void setType(String type) {
+			this.type = type;
+		}
+		public String getDirection() {
+			return direction;
+		}
+		public void setDirection(String direction) {
+			this.direction = direction;
+		}
+		public String getText() {
+			return text;
+		}
+		public void setText(String text) {
+			this.text = text;
+		}
+		public String getExtraText() {
+			return extraText;
+		}
+		public void setExtraText(String extraText) {
+			this.extraText = extraText;
+		}
+		public String getUrl() {
+			return url;
+		}
+		public void setUrl(String url) {
+			this.url = url;
+		}
+		
+	}
 
 	public static class Street {
 		private String street;
@@ -217,7 +274,10 @@ public class ManeuversBean {
 
 
 
-	public Street getStreets() {
+
+
+
+	public List<Street> getStreets() {
 		return streets;
 	}
 
@@ -225,15 +285,14 @@ public class ManeuversBean {
 
 
 
-	public void setStreets(Street streets) {
+	public void setStreets(List<Street> streets) {
 		this.streets = streets;
 	}
 
 
 
 
-
-	public String getSigns() {
+	public List<Sign> getSigns() {
 		return signs;
 	}
 
@@ -241,7 +300,7 @@ public class ManeuversBean {
 
 
 
-	public void setSigns(String signs) {
+	public void setSigns(List<Sign> signs) {
 		this.signs = signs;
 	}
 

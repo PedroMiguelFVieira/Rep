@@ -37,6 +37,7 @@ public class ServiceConfigFactory {
 			params.put("from", mappingBean.getFrom());	
 			params.put("to", mappingBean.getTo());
 			params.put("outFormat", mappingBean.getOutFormat());
+			params.put("unit", mappingBean.getUnit());
 			
 
 			serviceConfig.setHost(configType.getMethod());

@@ -2,24 +2,41 @@ package com.multicert.ws.external.bean;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class RouteBean {
 
 	private String sessionId;
-	private List<Options> options;
-	private List<BoundingBox> boundingBox;
+	private Options options;
+	private BoundingBox boundingBox;
 	private String distance;
 	private String time;
 	private String realTime;
 	private String fuelUsed;
 	private String formattedTime;
+	
+	@XmlElementWrapper(name="legs")
+	@XmlElement(name = "leg")
 	private List<LegBean> legs;
+	
+	
 	private String hasTollRoad;
 	private String hasFerry;
 	private String hasHighway;
 	private String hasSeasonalClosure;
 	private String hasUnpaved;
 	private String hasCountryCross;
+	
+	
+	@XmlElementWrapper(name="locations")
+	@XmlElement(name = "location")
 	private List<LocationRouteBean> locations;
+	
+	
 	private String locationSequence;
 	private String computedWaypoints;
 	
@@ -230,10 +247,11 @@ public class RouteBean {
 	}
 	
 
-	public List<BoundingBox> getBoundingBox() {
+
+	public BoundingBox getBoundingBox() {
 		return boundingBox;
 	}
-	public void setBoundingBox(List<BoundingBox> boundingBox) {
+	public void setBoundingBox(BoundingBox boundingBox) {
 		this.boundingBox = boundingBox;
 	}
 	public String getDistance() {
@@ -316,10 +334,11 @@ public class RouteBean {
 	public void setComputedWaypoints(String computedWaypoints) {
 		this.computedWaypoints = computedWaypoints;
 	}
-	public List<Options> getOptions() {
+
+	public Options getOptions() {
 		return options;
 	}
-	public void setOptions(List<Options> options) {
+	public void setOptions(Options options) {
 		this.options = options;
 	}
 	public List<LegBean> getLegs() {

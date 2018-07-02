@@ -9,7 +9,7 @@
 	<span>${itineraryInfo.finalCoordinates}</span><br/>
 
 	<label>Distancia:</label>
-	<span>${itineraryInfo.distance}</span><br/>
+	<span>${itineraryInfo.distance} km</span><br/>
 
 	<label>Duracao:</label>
 	<span>${itineraryInfo.duration}</span><br/>

@@ -9,6 +9,7 @@ public class ServiceConfigMappingBean {
 	private String location;
 	private String outFormat;
 	private String inFormat;
+	private String unit;
 	
 
 	public String getKey() {
@@ -47,6 +48,12 @@ public class ServiceConfigMappingBean {
 	}
 	public void setInFormat(String inFormat) {
 		this.inFormat = inFormat;
+	}
+	public String getUnit() {
+		return unit;
+	}
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
 	
 	
