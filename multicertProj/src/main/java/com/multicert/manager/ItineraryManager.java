@@ -64,8 +64,8 @@ public class ItineraryManager implements IItineraryManager {
 			
 			
 			
-			/*response.setInitialCoordinates(addressInfoBeanOrigin.getResult().getLocations().getDisplayLatLng().getLatLng().getLat() 
-					+ "," + addressInfoBeanOrigin.getResult().getLocations().getDisplayLatLng().getLatLng().getLng());*/
+			response.setInitialCoordinates(addressInfoBeanOrigin.getResults().get(0).getLocations().get(0).getLatLng().getLat() 
+					+ "," + addressInfoBeanOrigin.getResults().get(0).getLocations().get(0).getLatLng().getLng());
 			
 			
 			
@@ -80,8 +80,8 @@ public class ItineraryManager implements IItineraryManager {
 					
 			
 			
-			/*response.setFinalCoordinates(addressInfoBeanDestination.getResult().getLocations().getDisplayLatLng().getLatLng().getLat() + "," 
-			+ addressInfoBeanDestination.getResult().getLocations().getDisplayLatLng().getLatLng().getLng());*/
+			response.setFinalCoordinates(addressInfoBeanDestination.getResults().get(0).getLocations().get(0).getLatLng().getLat() + "," 
+			+ addressInfoBeanDestination.getResults().get(0).getLocations().get(0).getLatLng().getLng());
 			
 		
 		} catch (AddressNotFoundException | RouteNotFoundException | MandatoryFieldsNotFoundException e) {

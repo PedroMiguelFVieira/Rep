@@ -5,6 +5,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "response")
@@ -16,7 +17,8 @@ public class MapQuestGeoCodeBean extends AbstractMapQuestRouteBean {
 	@XmlElement(name = "info")
 	private InfoBean info;
 	
-	@XmlElement(name = "results")
+	@XmlElementWrapper(name="results")
+	@XmlElement(name = "result")
 	private List<ResultBean> results;
 
 	

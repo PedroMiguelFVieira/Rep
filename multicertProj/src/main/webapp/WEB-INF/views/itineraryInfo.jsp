@@ -15,6 +15,6 @@
 	<span>${itineraryInfo.duration}</span><br/>
 	
 	<label>Consumo Combinado:</label>
-	<span>${itineraryInfo.averageConsumption}</span><br/>
+	<span>${itineraryInfo.averateConsumption}</span><br/>
 	
 </div>

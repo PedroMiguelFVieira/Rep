@@ -17,8 +17,14 @@
 	<body>
 		<div class="form">
 			<form id="infoForm">
-				<input type="text" name="originAddress" class="input">
-				<input type="text" name="destinationAddress" class="input">
+				<label for="orig">Origem</label>
+				<input type="text" name="originAddress" class="input" id="orig">
+				</br>
+				<div> </div>
+				</br>
+				<label for="dest">Destino</label>
+				<input type="text" name="destinationAddress" class="input" id="dest">
+				
 				<!--input type="text" name="vehicle" class="input"-->
 			
 				
