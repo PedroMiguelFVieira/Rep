@@ -20,8 +20,8 @@ public class ExternalServiceMapper<T> {
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
 		StringReader reader = new StringReader(xmlValue);
-		T findNearWeatherBean = (T) unmarshaller.unmarshal(reader);
+		T bean = (T) unmarshaller.unmarshal(reader);
 
-		return findNearWeatherBean;
+		return bean;
 	}
 }

@@ -6,16 +6,16 @@ public class Car{
 	
 	private Long id;
 	private String model;
-	private String licencePlate;
+	private String licensePlate;
 	private String brand;
 	private String averageConsumption;
 	
 	
-	public Car (Long id, String model, String licencePlate, String brand, String averageConsumption) {
+	public Car (Long id, String model, String licensePlate, String brand, String averageConsumption) {
 		super();
 		this.id = id;
 		this.model = model;
-		this.licencePlate = licencePlate;
+		this.licensePlate = licensePlate;
 		this.brand = brand;
 		this.averageConsumption = averageConsumption;		
 	}
@@ -23,7 +23,7 @@ public class Car{
 	public Car(String model, String licencePlate, String brand, String averageConsumption) {
 		super();		
 		this.model = model;
-		this.licencePlate = licencePlate;
+		this.licensePlate = licencePlate;
 		this.brand = brand;
 		this.averageConsumption = averageConsumption;	
 	}
@@ -50,12 +50,7 @@ public class Car{
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getLicencePlate() {
-		return licencePlate;
-	}
-	public void setLicencePlate(String licencePlate) {
-		this.licencePlate = licencePlate;
-	}
+
 	public String getBrand() {
 		return brand;
 	}
@@ -69,9 +64,17 @@ public class Car{
 		this.averageConsumption = averageConsumption;
 	}
 	
-	 @Override
+	 public String getLicensePlate() {
+		return licensePlate;
+	}
+
+	public void setLicensePlate(String licensePlate) {
+		this.licensePlate = licensePlate;
+	}
+
+	@Override
     public String toString() {		 
-        return String.format("Car [model=%s, licencePlate=%s, brand=%s , averageConsumption=%s]", model, licencePlate, brand, averageConsumption);
+        return String.format("Car [model=%s, licencePlate=%s, brand=%s , averageConsumption=%s]", model, licensePlate, brand, averageConsumption);
     }	
 	
 	

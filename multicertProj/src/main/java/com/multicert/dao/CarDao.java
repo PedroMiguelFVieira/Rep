@@ -55,7 +55,7 @@ public class CarDao {
 		
 		
 		 String model  = car.getModel();
-		 String licensePlate = car.getLicencePlate();
+		 String licensePlate = car.getLicensePlate();
 		 String brand = car.getBrand();
 		 String averageConsumption = car.getAverageConsumption();
 
@@ -103,7 +103,7 @@ public class CarDao {
 		if(rs!=null) {
 			Car car = new Car();
 			car.setModel(rs.getString("MODEL"));
-			car.setLicencePlate(rs.getString("LICENSE_PLATE"));
+			car.setLicensePlate(rs.getString("LICENSE_PLATE"));
 			car.setBrand(rs.getString("BRAND"));
 			car.setAverageConsumption(rs.getString("AVERAGE_CONSUMPTION"));
 			
@@ -136,7 +136,7 @@ public class CarDao {
 			Car car = new Car();
 			car.setId(rs.getLong("ID"));
 			car.setModel(rs.getString("MODEL"));
-			car.setLicencePlate(rs.getString("LICENSE_PLATE"));
+			car.setLicensePlate(rs.getString("LICENSE_PLATE"));
 			car.setBrand(rs.getString("BRAND"));
 			car.setAverageConsumption(rs.getString("AVERAGE_CONSUMPTION"));
 			cars.add(car);

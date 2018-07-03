@@ -29,9 +29,18 @@
 				</br>
 				<label for="dest">Destino</label>
 				<input type="text" name="destinationAddress" class="input" id="dest">
+				</br>		
+				</br>
 				
-		    
-			
+				<!--<label for="carSelector">Viatura</label>
+				<select name="cars" id="carSelector">
+		          <c:forEach var="car" items="${cars}">
+		            <option value="${car.licensePlate}">${car.brand}</option>
+		          </c:forEach>
+		        </select>-->
+        
+     
+
 				
 				<button id="search" class="btn" type="button">Search</button>
 			</form>

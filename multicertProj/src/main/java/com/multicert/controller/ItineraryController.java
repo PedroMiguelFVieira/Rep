@@ -21,6 +21,7 @@ import com.multicert.bean.Car;
 import com.multicert.bean.ItineraryRequestDetail;
 import com.multicert.bean.ItineraryResponse;
 import com.multicert.dao.CarDao;
+import com.multicert.manager.CarManager;
 import com.multicert.manager.IItineraryManager;
 
 @Controller
@@ -32,45 +33,25 @@ public class ItineraryController {
 	private IItineraryManager service;
 	
 	/*@Autowired
-	private CarJdbcRepository repository;*/
-	
-	/*@Autowired*/
-	private CarDao dao;
+	private CarManager carManager;*/
 	
 	
-	 @RequestMapping(value = "/req", method = RequestMethod.GET)
-	   public ModelAndView user() {
-		 ItineraryRequestDetail req = new ItineraryRequestDetail();	  
-		  
-		  ModelAndView modelAndView = new ModelAndView("req", "command", req);
-		  return modelAndView;
-	   }
+	
+
 	
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String loginPage(Locale locale, Model model) throws ClassNotFoundException, SQLException {
-		logger.info("/index visited.");
+		logger.info("/index visited.");	
+	
+		/*CarDao dao = new CarDao();	
+		List<Car> cars = dao.getAll();
+		
+		model.addAttribute("cars", cars);*/
 		return "index";
 	}
 	
-	
-	
-	 @ModelAttribute("carsList")
-	 public Map<String, String> getCarsList() throws ClassNotFoundException, SQLException {
-		 
-		 CarDao dao = new CarDao();		
-		 List<Car> cars = dao.getAll();
-		 
-	      Map<String, String> carsList = new HashMap<String, String>();
-	      
-	      if(cars!=null && !cars.isEmpty()) {
-				for(Car car : cars) {
-					carsList.put(car.getLicencePlate(), car.getModel());
-				}
-			}
 
-	      return carsList;
-	   }
 	
 
 	@RequestMapping(value = "/getInfo", method = {RequestMethod.POST, RequestMethod.GET})

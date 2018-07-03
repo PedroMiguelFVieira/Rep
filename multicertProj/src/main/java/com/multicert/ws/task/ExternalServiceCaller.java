@@ -13,7 +13,6 @@ public class ExternalServiceCaller implements Callable<String>{
 
 	private static final Logger logger = LoggerFactory.getLogger(ExternalServiceCaller.class);
 	
-	//private static final String MAP_QUEST_URL = "http://www.mapquestapi.com/directions/v2/";
 	private static final String MAP_QUEST_URL = "http://www.mapquestapi.com/";
 	
 	
