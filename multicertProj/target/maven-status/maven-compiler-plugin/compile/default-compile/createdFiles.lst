@@ -6,17 +6,14 @@ com\multicert\ws\external\bean\ManeuversBean$Street.class
 com\multicert\ws\external\bean\MapQuestRouteBean.class
 com\multicert\ws\external\http\HttpPostConnection.class
 com\multicert\manager\ItineraryManager.class
-com\multicert\service\ItineraryService.class
 com\multicert\ws\external\bean\LocationBean$DisplayLatLngBean.class
 com\multicert\ws\external\request\IMapQuestRequestManager.class
 com\multicert\exception\AddressNotFoundException.class
 com\multicert\exception\MandatoryFieldsNotFoundException.class
 com\multicert\exception\RouteNotFoundException.class
-com\multicert\dao\CarJdbcRepository.class
 com\multicert\ws\external\bean\InfoBean$Copyright.class
 com\multicert\ws\external\bean\RouteBean.class
 com\multicert\ws\external\bean\ResultBean$ProvidedLocationBean.class
-com\multicert\dao\CarJdbcRepository$CarRowMapper.class
 com\multicert\ws\external\bean\InfoBean.class
 com\multicert\ws\external\bean\MapQuestGeoCodeBean.class
 com\multicert\ws\external\http\HttpGetConnection.class

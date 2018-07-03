@@ -20,12 +20,10 @@ D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\bean\LocationBe
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\bean\MapQuestRouteBean.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\http\HttpPostConnection.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\bean\RouteErrorBean.java
-D:\Git\Rep\multicertProj\src\main\java\com\multicert\dao\CarJdbcRepository.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\bean\ResultBean.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\bean\RouteBean.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\exception\MandatoryFieldsNotFoundException.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\exception\RouteNotFoundException.java
-D:\Git\Rep\multicertProj\src\main\java\com\multicert\service\ItineraryService.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\task\ExternalServiceCaller.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\bean\AbstractMapQuestRouteBean.java
 D:\Git\Rep\multicertProj\src\main\java\com\multicert\ws\external\request\IMapQuestRequestManager.java
